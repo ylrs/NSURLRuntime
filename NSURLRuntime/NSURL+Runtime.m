@@ -28,17 +28,42 @@
     
     NSString *urlStr;
     
+    //若链接包含文字或空格,需要转义
     CGFloat version = [[[UIDevice currentDevice] systemVersion] floatValue];
     if (version < 10.0) {
-        urlStr = [URLString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        if ([self isChineseCharacter:URLString] || [URLString rangeOfString:@""].location != NSNotFound) {
+            urlStr = [URLString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        }
+        else{
+            urlStr = URLString;
+        }
     }
     else if(version >= 10.0) {
-        NSString *charactersToEscape = @"?!@#$^&%*+,:;='\"`<>()[]{}/\\| ";
-        NSCharacterSet *allowedCharacters = [[NSCharacterSet characterSetWithCharactersInString:charactersToEscape] invertedSet];
-
-        urlStr = [URLString stringByAddingPercentEncodingWithAllowedCharacters:allowedCharacters];
+        
+        if ([self isChineseCharacter:URLString] || [URLString rangeOfString:@""].location != NSNotFound) {
+            NSString *charactersToEscape = @"?!@#$^&%*+,:;='\"`<>()[]{}/\\| ";
+            NSCharacterSet *allowedCharacters = [[NSCharacterSet characterSetWithCharactersInString:charactersToEscape] invertedSet];
+            
+            urlStr = [URLString stringByAddingPercentEncodingWithAllowedCharacters:allowedCharacters];
+        }
+        else{
+            urlStr = URLString;
+        }
     }
     NSURL *url = [NSURL Safe_URLWithString:urlStr];
     return url;
 }
+
++(BOOL)isChineseCharacter:(NSString *)string {
+    NSInteger len = string.length;
+    for(int i=0;i<len;i++)
+    {
+        unichar a=[string characterAtIndex:i];
+        if(!((isalpha(a))||(isalnum(a))||((a >= 0x4e00 && a <= 0x9fa6))))
+            return NO;
+    }
+    return YES;
+}
+
 @end
+
