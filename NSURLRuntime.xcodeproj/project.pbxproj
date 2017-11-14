@@ -13,7 +13,7 @@
 		34DAB2171FBAB4BC006E2AB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34DAB2161FBAB4BC006E2AB1 /* Assets.xcassets */; };
 		34DAB21A1FBAB4BC006E2AB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34DAB2181FBAB4BC006E2AB1 /* LaunchScreen.storyboard */; };
 		34DAB21D1FBAB4BC006E2AB1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DAB21C1FBAB4BC006E2AB1 /* main.m */; };
-		34DAB2281FBAB52B006E2AB1 /* NSURL+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DAB2271FBAB52B006E2AB1 /* NSURL+Runtime.m */; };
+		34DAB22F1FBAD30A006E2AB1 /* NSURL+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = 34DAB22E1FBAD30A006E2AB1 /* NSURL+Runtime.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +27,8 @@
 		34DAB2191FBAB4BC006E2AB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		34DAB21B1FBAB4BC006E2AB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34DAB21C1FBAB4BC006E2AB1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		34DAB2261FBAB52B006E2AB1 /* NSURL+Runtime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+Runtime.h"; sourceTree = "<group>"; };
-		34DAB2271FBAB52B006E2AB1 /* NSURL+Runtime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Runtime.m"; sourceTree = "<group>"; };
+		34DAB22D1FBAD30A006E2AB1 /* NSURL+Runtime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+Runtime.h"; sourceTree = "<group>"; };
+		34DAB22E1FBAD30A006E2AB1 /* NSURL+Runtime.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Runtime.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,17 +61,25 @@
 		34DAB20C1FBAB4BC006E2AB1 /* NSURLRuntime */ = {
 			isa = PBXGroup;
 			children = (
+				34DAB22C1FBAD30A006E2AB1 /* NSURLRuntime */,
 				34DAB20D1FBAB4BC006E2AB1 /* AppDelegate.h */,
 				34DAB20E1FBAB4BC006E2AB1 /* AppDelegate.m */,
 				34DAB2101FBAB4BC006E2AB1 /* ViewController.h */,
 				34DAB2111FBAB4BC006E2AB1 /* ViewController.m */,
-				34DAB2261FBAB52B006E2AB1 /* NSURL+Runtime.h */,
-				34DAB2271FBAB52B006E2AB1 /* NSURL+Runtime.m */,
 				34DAB2131FBAB4BC006E2AB1 /* Main.storyboard */,
 				34DAB2161FBAB4BC006E2AB1 /* Assets.xcassets */,
 				34DAB2181FBAB4BC006E2AB1 /* LaunchScreen.storyboard */,
 				34DAB21B1FBAB4BC006E2AB1 /* Info.plist */,
 				34DAB21C1FBAB4BC006E2AB1 /* main.m */,
+			);
+			path = NSURLRuntime;
+			sourceTree = "<group>";
+		};
+		34DAB22C1FBAD30A006E2AB1 /* NSURLRuntime */ = {
+			isa = PBXGroup;
+			children = (
+				34DAB22D1FBAD30A006E2AB1 /* NSURL+Runtime.h */,
+				34DAB22E1FBAD30A006E2AB1 /* NSURL+Runtime.m */,
 			);
 			path = NSURLRuntime;
 			sourceTree = "<group>";
@@ -148,7 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34DAB2121FBAB4BC006E2AB1 /* ViewController.m in Sources */,
-				34DAB2281FBAB52B006E2AB1 /* NSURL+Runtime.m in Sources */,
+				34DAB22F1FBAD30A006E2AB1 /* NSURL+Runtime.m in Sources */,
 				34DAB21D1FBAB4BC006E2AB1 /* main.m in Sources */,
 				34DAB20F1FBAB4BC006E2AB1 /* AppDelegate.m in Sources */,
 			);
